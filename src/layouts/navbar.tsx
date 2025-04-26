@@ -41,10 +41,10 @@ export default function Navbar() {
   return (
     <div
       className={`navbar fixed z-[1000] w-[100%] top-0 ${
-        scrollY_Screen ? "backdrop-blur-sm bg-black-100 " : ""
+        scrollY_Screen ? " " : "backdrop-blur-sm bg-[#012235]"
       } `}
     >
-      <div className="container text-white flex lg:justify-around justify-between items-center gap-[10px]  ">
+      <div className="container text-white flex justify-between items-center gap-[10px]  ">
         <div
           className={"lg:hidden inline right-0 w-[2rem]  "}
           onClick={changeTogler}

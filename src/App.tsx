@@ -1,4 +1,5 @@
 import './App.css'
+import Footer from './layouts/footer'
 import Navbar from './layouts/navbar'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <Footer/>
     </>
   )
 }
