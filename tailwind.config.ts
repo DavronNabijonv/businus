@@ -14,6 +14,7 @@ const config: Config = {
         hoverColor: "#848484",    // Yashil urg'u
         fillIcon: "#12A4A6",    // Xatolik rangi (qizil)
         linear: "#OO578A",      // Qora fon
+        lampColor:"#O6629B"
       },
     },
   },

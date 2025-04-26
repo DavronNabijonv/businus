@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 interface btnProps{
     txt:string;
-    click_func:()=>void;
+    click_func?:()=>void;
     btn_styles:string;
     iconImg?:ReactNode
 }
