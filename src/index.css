@@ -2,14 +2,14 @@
 
 @import "tailwindcss";
 
-@theme{
+/* @theme{
   --color-primery: #012235;   
   secondary: "#4CCEDO", 
   hoverColor: "#848484",  
   fillIcon: "#12A4A6",    
   linear: "#OO578A",      
   lampColor:"#O6629B";
-}
+} */
 
 *{
   font-family: "Roboto",sans-serif;
