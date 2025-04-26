@@ -1,12 +1,11 @@
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
-import "../../App.css";
+import "../App.css";
 import TextTranslater from "../components/textTranslater";
 import { NavLink } from "react-router-dom";
-import Btn from "../components/btn";
 import { useTranslation } from "react-i18next";
 
 // logo image
-import logo from "../../assets/limsa_logo.png";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [scrollY_Screen, setScrollY_Screen] = useState(false);
@@ -38,24 +37,43 @@ export default function Navbar() {
       }  border-b-1 border-gray-400`}
     >
       <div className="container text-white flex lg:justify-around justify-between items-center gap-[10px]  ">
+
+      <div
+          className={"lg:hidden inline right-0 w-[2rem]  "}
+          onClick={changeTogler}
+        >
+          <div
+            className={` ${
+              togle
+                ? " transform -rotate-[45deg] -translate-x-[10px] translate-y-[5px] "
+                : "  "
+            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-white duration-[0.4s]`}
+          ></div>
+          <div
+            className={` ${
+              togle ? "opacity-[0]" : "opacity-[1]"
+            } m-[0.5rem] w-[0.8rem] h-[0.12rem] bg-white duration-[0.4s]`}
+          ></div>
+          <div
+            className={` ${
+              togle
+                ? "transform rotate-[45deg] -translate-x-[10px] -translate-y-[15px]"
+                : ""
+            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-white duration-[0.4s]`}
+          ></div>
+        </div>
+
         <div className="logo  ">
           <img
             src={logo}
             loading="lazy"
             alt="logo image"
-            className=" lg:w-[200px] w-[180px] "
+            className=" lg:w-[150px] w-[120px] "
           />
         </div>
 
         <div className=" links max-w-[800px] w-[100%] lg:flex hidden justify-start items-center gap-[20px] ">
           <LinksGroup />
-        </div>
-
-        <div className=" lg:inline hidden phoneNumber-btn py-[10px] px-[20px] ">
-          <Btn
-            txt="+998 (33) 258 73 58"
-            btn_styles=" py-[8px] text-[14px] rounded-[25px] w-[180px] "
-          />
         </div>
 
         {/* style navbar for phone */}
@@ -73,30 +91,6 @@ export default function Navbar() {
           />
         </div>
 
-        <div
-          className={"lg:hidden inline right-0 w-[2rem]  "}
-          onClick={changeTogler}
-        >
-          <div
-            className={` ${
-              togle
-                ? " transform -rotate-[45deg] -translate-x-[10px] translate-y-[5px] "
-                : "  "
-            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
-          ></div>
-          <div
-            className={` ${
-              togle ? "opacity-[0]" : "opacity-[1]"
-            } m-[0.5rem] w-[0.8rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
-          ></div>
-          <div
-            className={` ${
-              togle
-                ? "transform rotate-[45deg] -translate-x-[10px] -translate-y-[15px]"
-                : ""
-            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
-          ></div>
-        </div>
       </div>
 
       {/* overflow */}
@@ -130,7 +124,7 @@ function LinksGroup({ close_func }:close) {
         onClick={close_func}
         className={({ isActive }) =>
           `text-[16px] py-[4px] px-[10px] ${
-            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+            isActive ? "text-secondary" : ""
           }`
         }
       >
@@ -166,7 +160,7 @@ function LinksGroup({ close_func }:close) {
         onClick={close_func}
         className={({ isActive }) =>
           `text-[16px] py-[4px] px-[10px] ${
-            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+            isActive ? "text-secondary" : ""
           }`
         }
       >
