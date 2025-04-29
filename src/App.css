@@ -106,7 +106,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-.mainServiceGrp:hover{
+.hoverly:hover{
   box-shadow:10px 10px 4px #4cced0;
 }
 

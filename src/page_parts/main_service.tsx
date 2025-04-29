@@ -50,7 +50,7 @@ export default function Main_service() {
         <TextTranslater txt="our-s-txt" txt_styles=" text-white sm:text-[18px] text-[16px] max-w-[1000px] w-full " />
         <div className="grid_grp grid lg:grid-cols-2 grid-cols-1 xl:gap-[50px] lg:gap-[25px] gap-[40px] ">
           {mainService.map((item) => (
-            <div  key={item.id} className=" mainServiceGrp flex items-center gap-[15px] bg-[#041723] rounded-[20px] py-[15px] sm:px-[30px] px-[10px] ">
+            <div  key={item.id} className=" hoverly flex items-center gap-[15px] bg-[#041723] rounded-[20px] py-[15px] sm:px-[30px] px-[10px] ">
               <img
                 src={item.image}
                 loading="lazy"
