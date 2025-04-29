@@ -8,8 +8,23 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 // icon
 import { FaStar } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 export default function ShowCase_swiper() {
+
+  const [inWidth, setInWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setInWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className=" my-[50px] " >
       <div className="container">
@@ -21,7 +36,7 @@ export default function ShowCase_swiper() {
           }}
           navigation
           spaceBetween={10}
-          slidesPerView={5}
+          slidesPerView={ inWidth < 500 ? 2 : inWidth < 800 ? 3 : 5 }
           centeredSlides={false}
           loop={true}
           className=" showCase-swiper w-full"

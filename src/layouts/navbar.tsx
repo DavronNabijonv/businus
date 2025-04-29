@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <div
       className={`navbar fixed z-[1000] w-[100%] top-0 ${
-        scrollY_Screen ? " " : "backdrop-blur-sm bg-[#012235]"
+        scrollY_Screen ? " " : "backdrop-blur-sm "
       } `}
     >
       <div className="container text-white flex justify-between items-center gap-[10px]  ">

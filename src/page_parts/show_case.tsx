@@ -27,31 +27,40 @@ export default function Show_case() {
             <div className="grp_absolute lg:inline hidden w-auto ">
               <img
                 src={show_Case_hover}
-                className=" absolute xl:top-[30px] top-[22px] left-[500px] 2xl:max-w-[900px] xl:max-w-[800px] lg:max-w-[500px] w-full z-[-1] "
+                className=" showCase-mainImage "
                 loading="lazy"
                 alt="show_case main image"
               />
               <img
                 src={show_Case}
-                className=" absolute xl:top-[15px] top-0 left-[480px] 2xl:max-w-[900px] xl:max-w-[800px] lg:max-w-[500px] w-[100%] z-[-1] "
+                className=" showCase-mainImage-hover "
                 loading="lazy"
                 alt="show_case main image"
               />
             </div>
 
-            <div className="grp_left flex flex-col gap-[30px] mt-[50px] max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
-              <div className="with_span flex items-center gap-[10px] text-white xl:text-[63px] lg:text-[50px] lg:text-[] font-[700]   ">
-                <TextTranslater txt="head-your" />
-                <TextTranslater txt="head-growth" txt_styles="text-[#4CCED0]" />
+            <div className="grp_left flex flex-col gap-[20px]  max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
+              <div className="showCase-title">
+                <div className="with_span flex items-center gap-[10px] ">
+                  <TextTranslater txt="head-your" />
+                  <TextTranslater
+                    txt="head-growth"
+                    txt_styles="text-[#4CCED0]"
+                  />
+                </div>
+                <div className="head-our">
+                  <TextTranslater
+                    txt="head-our"
+                    txt_styles=" text-white font-[600] "
+                  />
+                </div>
               </div>
-              <TextTranslater
-                txt="head-our"
-                txt_styles=" text-white text-[70px] font-[600] "
-              />
-              <TextTranslater
-                txt="head-txt"
-                txt_styles=" text-[22px] text-white w-[500px] mt-[30px] lg:text-left text-center "
-              />
+              <div className="head-txt">
+                <TextTranslater
+                  txt="head-txt"
+                  txt_styles="showCase-txt text-white max-w-[500px] w-full mt-[30px] lg:text-left text-center "
+                />
+              </div>
               <div className="btn_grp flex gap-[15px] mt-[30px] text-white  ">
                 <Btn
                   txt="started"
@@ -66,7 +75,7 @@ export default function Show_case() {
 
             <img
               src={circle}
-              className=" lg:absolute  max-lg:w-[200px]  bottom-[80px] right-[600px] "
+              className=" showCase-absoluteCircle "
               loading="lazy"
               alt="circle image"
             />
@@ -74,10 +83,9 @@ export default function Show_case() {
         </div>
       </div>
 
-        <div className="showCase_slider">
-            <ShowCase_swiper/>
-        </div>
-
+      <div className="showCase_slider">
+        <ShowCase_swiper />
+      </div>
     </>
   );
 }
