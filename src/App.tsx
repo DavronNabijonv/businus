@@ -1,10 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import AOS from "aos";
 import Footer from './layouts/footer'
 import Navbar from './layouts/navbar'
 import Section1 from './layouts/section1'
+import { useEffect } from 'react'
 
 function App() {
+
+   // aos animation 
+   useEffect(() => {
+    AOS.init({
+      duration: 1000, // animatsiya davomiyligi (ms)
+      once: true, // har doim emas, faqat birinchi ko‘rinishda
+    });
+  }, []);
 
   const routes = [
     {
