@@ -1,5 +1,6 @@
 
 import Main_about from '../page_parts/main_about'
+import Main_raison from '../page_parts/main_raison'
 import Main_service from '../page_parts/main_service'
 import Show_case from '../page_parts/show_case'
 
@@ -9,6 +10,7 @@ export default function Section1() {
       <Show_case/>
       <Main_about/>
       <Main_service/>
+      <Main_raison/>
     </div>
   )
 }
