@@ -5,7 +5,7 @@ interface btnProps{
     txt:string;
     click_func?:()=>void;
     btn_styles:string;
-    iconImg?:ReactNode
+    iconImg?:ReactNode;
 }
 
 export default function Btn({ txt, click_func, btn_styles, iconImg }:btnProps) {

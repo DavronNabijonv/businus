@@ -8,7 +8,7 @@ import logo from '../assets/logo.png';
 
 export default function Footer() {
   return (
-    <div className="footer mt-[200px] py-[20px] ">
+    <div className="footer py-[20px] ">
       <div className="container flex flex-col gap-[15px] ">
 
         <div className="LinksGrpFooter text-white flex flex-wrap items-center sm:justify-start justify-center gap-[40px] ">
