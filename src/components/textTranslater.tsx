@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import '../App.css';
 
 type TextProps = 
   | { have_route: true; route_link: string; route_active_styles?: string; route_click_func?: () => void; have_ancor?: false; ancor_link?: never; txt: string; txt_styles?: string; }
