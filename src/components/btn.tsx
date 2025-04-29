@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import '../App.css'
 
 // icons
-import { MdOutlineCallMade } from "react-icons/md";
-import { FiPhoneCall } from "react-icons/fi";
 
 interface btnProps{
     txt:string;
