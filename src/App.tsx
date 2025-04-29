@@ -5,6 +5,7 @@ import Footer from './layouts/footer'
 import Navbar from './layouts/navbar'
 import Section1 from './layouts/section1'
 import { useEffect } from 'react'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         ))}
       </Routes>
       <Footer/>
+      <ToastContainer />
     </>
   )
 }
