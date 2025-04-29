@@ -100,6 +100,18 @@
   margin-top: 50px;
 }
 
+/* main_about styles */
+.main_about{
+  background-image: url(./assets/Group.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.arrow-btn:hover,
+.call-btn:hover{
+  color: #4cced0;
+}
+
 @media(max-width:1400px){
   /* show Case part styles */
 .showCase-mainImage,
