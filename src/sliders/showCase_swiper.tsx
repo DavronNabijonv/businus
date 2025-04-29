@@ -1,4 +1,4 @@
-import React from "react";
+
 import "../App.css";
 // Slider.jsx
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,7 +11,7 @@ import { FaStar } from "react-icons/fa6";
 
 export default function ShowCase_swiper() {
   return (
-    <div>
+    <div className=" my-[50px] " >
       <div className="container">
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -20,8 +20,10 @@ export default function ShowCase_swiper() {
             disableOnInteraction: false,
           }}
           navigation
-          spaceBetween={30}
-          slidesPerView={1}
+          spaceBetween={10}
+          slidesPerView={5}
+          centeredSlides={false}
+          loop={true}
           className=" showCase-swiper w-full"
         >
           <SwiperSlide>
