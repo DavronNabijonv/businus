@@ -4,3 +4,9 @@
   margin: 0 auto;
   padding: 10px;
 }
+
+.show_Case{
+  background-image: url(./assets/Group\ 10.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
