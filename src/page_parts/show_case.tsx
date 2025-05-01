@@ -33,11 +33,12 @@ export default function Show_case() {
                 loading="lazy"
                 alt="show_case main image"
               />
+              <div className="circleEffect" ></div>
             </div>
 
             <div className="grp_left flex flex-col gap-[20px]  max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
               <div className="showCase-ti">
-                <div className="with_span w-auto inline-block rounded-[60px] py-[5px] px-[30px] bg-[#012235] ">
+                <div className="with_span w-auto inline-block rounded-[60px] py-[5px] pr-[30px] bg-[#012235] ">
                   <TextTranslater txt="head-your" txt_styles="inline" />
                   <TextTranslater
                     txt="head-growth"
@@ -47,7 +48,7 @@ export default function Show_case() {
                 <div className="head-our">
                   <TextTranslater
                     txt="head-our"
-                    txt_styles=" text-white font-[600] rounded-[60px] py-[5px] px-[30px] bg-[#012235] inline-block mt-[20px] "
+                    txt_styles=" text-white font-[600] rounded-[60px] py-[5px] pr-[30px] bg-[#012235] inline-block mt-[20px] "
                   />
                 </div>
               </div>

@@ -35,7 +35,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #012235;
+  background-color: #04344F;
+}
+
+.showCase-swiper .swiper-button-next{
+  box-shadow: -10px 0px 2px #012235 ;
+}
+.showCase-swiper .swiper-button-prev{
+  box-shadow: 10px 0px 2px #012235 ;
 }
 
 .showCase-swiper .swiper-button-prev{
@@ -67,15 +74,43 @@
 .showCase-mainImage{
   position: absolute;
   z-index: -1;
-  top: 0; 
-  right: 25px;
+  top: 25px;
+  right: 0px;
   max-width: 900px;
   width: 100%;
   border-radius: 25px;
 }
-.showCase-mainImage{
-  top: 25px;
-  right: 0px;
+.grp_absolute::before{
+  content: '';
+  position: absolute;
+  background-color: #f4f8fa00;
+  backdrop-filter: blur(1px);
+  padding: 20px;
+  border-radius: 100%;
+  top: 255px;
+  left: 495px;
+  box-shadow:-10px -5px 4px #012235;
+}
+.grp_absolute::after{
+  content: '';
+  position: absolute;
+  background-color: #f4f8fa00;
+  backdrop-filter: blur(1px);
+  padding: 20px;
+  border-radius: 100%;
+  top: 20px;
+  left: 502px;
+  box-shadow:-9px 8px 4px #012235;
+}
+.circleEffect{
+  position: absolute;
+  z-index: 2;
+  top: 138px;
+  left: 500px;
+  padding: 13px;
+  background-color: #fdfdfd00;
+  border-radius: 100%;
+  box-shadow: -9px 0px 4px #012235;
 }
 .showCase-absoluteCircle{
   position: absolute;
@@ -115,6 +150,11 @@
 .arrow-btn:hover,
 .call-btn:hover{
   color: #4cced0;
+}
+
+/* after before styles */
+.with_span{
+  position: relative;
 }
 
 @media(max-width:1400px){
