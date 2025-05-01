@@ -186,6 +186,24 @@
 .head-txt{
   font-size: 24px;
 }
+.grp_absolute::before{
+  padding: 20px;
+  top: 205px;
+  left: 585px;
+  display: none;
+}
+.grp_absolute::after{
+  padding: 20px;
+  top: 15px;
+  left: 605px;
+  display: none;
+}
+.circleEffect{
+  top: 106px;
+  padding: 17px;
+  left: 600px;
+  display: none;
+}
 }
 
 @media(max-width:1320px){
