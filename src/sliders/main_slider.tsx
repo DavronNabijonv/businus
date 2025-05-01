@@ -1,4 +1,4 @@
-
+import './main_slider.css';
 
 export default function Main_slider() {
   return (
