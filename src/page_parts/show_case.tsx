@@ -5,7 +5,6 @@ import TextTranslater from "../components/textTranslater";
 import Btn from "../components/btn";
 
 // images
-import show_Case from "../assets/Vector 14.png";
 import circle from "../assets/Frame 36.png";
 import ShowCase_swiper from "../sliders/showCase_swiper";
 import showCase from '../assets/showcase.jpg';
