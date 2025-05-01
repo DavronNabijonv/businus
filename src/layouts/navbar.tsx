@@ -11,11 +11,11 @@ import { BsGlobe2 } from "react-icons/bs";
 export default function Navbar() {
   const [scrollY_Screen, setScrollY_Screen] = useState(false);
 
-   // change language
-   const { i18n } = useTranslation();
-   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-     i18n.changeLanguage(e.target.value);
-   };
+  // change language
+  const { i18n } = useTranslation();
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(e.target.value);
+  };
 
   // hide and show of togle button
   const [togle, setTogle] = useState(false);
@@ -83,16 +83,16 @@ export default function Navbar() {
           <LinksGroup />
         </div>
 
-        <div className=" flex gap-[5px] items-center rounded-[25px] backdrop-blur-sm bg-[#1B4055] hover:bg-gray-700 pl-[10px] " >
+        <div className=" flex gap-[5px] items-center rounded-[25px] backdrop-blur-sm bg-[#1B4055] hover:bg-gray-700 pl-[10px] ">
           <BsGlobe2 />
-        <select
-          className="appearance-none hover:bg-gray-700 shadow-white rounded-[25px] p-[8px] rounded-[10px] flex flex-col justify-center items-center "
-          onChange={handleChange}
-        >
-          <option value={"uz"}>Уз</option>
-          <option value={"ru"}>Py</option>
-          <option value={"en"}>Eng</option>
-        </select>
+          <select
+            className="appearance-none hover:bg-gray-700 shadow-white rounded-[25px] p-[8px] rounded-[10px] flex flex-col justify-center items-center "
+            onChange={handleChange}
+          >
+            <option value={"uz"}>Уз</option>
+            <option value={"ru"}>Py</option>
+            <option value={"en"}>Eng</option>
+          </select>
         </div>
 
         {/* style navbar for phone */}
@@ -101,13 +101,39 @@ export default function Navbar() {
             togle
               ? "transform translate-x-[0%] z-[22222] "
               : "transform translate-x-[100%]"
-          } top-[70px] bg-[#041723] right-0 w-[60%] h-[100vh] p-[15px] `}
+          } top-[0px] bg-[#041723] right-0 w-[60%] h-[100vh] p-[15px] max-sm:w-[100%] `}
         >
-          <LinksGroup
-            close_func={() => {
-              setTogle(false);
-            }}
-          />
+          <div
+            className={"lg:hidden inline right-0 w-[2rem]  "}
+            onClick={changeTogler}
+          >
+            <div
+              className={` ${
+                togle
+                  ? " transform -rotate-[45deg] -translate-x-[10px] translate-y-[5px] "
+                  : "  "
+              } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-white duration-[0.4s]`}
+            ></div>
+            <div
+              className={` ${
+                togle ? "opacity-[0]" : "opacity-[1]"
+              } m-[0.5rem] w-[0.8rem] h-[0.12rem] bg-white duration-[0.4s]`}
+            ></div>
+            <div
+              className={` ${
+                togle
+                  ? "transform rotate-[45deg] -translate-x-[10px] -translate-y-[15px]"
+                  : ""
+              } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-white duration-[0.4s]`}
+            ></div>
+          </div>
+          <div className=" flex flex-col gap-[15px] items-center " >
+            <LinksGroup
+              close_func={() => {
+                setTogle(false);
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -128,8 +154,6 @@ interface close {
 }
 
 function LinksGroup({ close_func }: close) {
- 
-
   return (
     <>
       <NavLink
