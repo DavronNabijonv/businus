@@ -1,51 +1,33 @@
-import './main_slider.css';
+import "./main_slider.css";
+import '../App.css';
+import TextTranslater from "../components/textTranslater";
+
+// images
+import colon from "../assets/Vector.png";
+import userImg from '../assets/Frame 64.png'
 
 export default function Main_slider() {
   return (
-    <div>
-        <div className="flex gap-8 bg-[#001c2c] p-10 min-h-screen items-center justify-center">
-  {/* <!-- Card with hover effect --> */}
-  <div className="relative group bg-[#0a1c2f] text-white p-6 rounded-3xl w-[300px] transition-all duration-300">
-    {/* <!-- Shadow effect on hover --> */}
-    <div className="absolute top-0 left-0 w-full h-full rounded-3xl border-[6px] border-cyan-400 z-[-1] 
-                translate-x-2 translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+    <div className="main_slider py-[100px] ">
 
-    <div className="text-5xl text-cyan-400">❝</div>
-    <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-      We develop websites with the high quality, from corporate websites to web applications.
-      We develop websites with the high quality, from corporate websites to web applications.
-      We develop websites with the high quality, from corporate websites to web applications.
-    </p>
+      <div className="container">
 
-    {/* <!-- Author --> */}
-    <div className="flex items-center gap-4 mt-6">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-12 h-12 rounded-full"/>
-      <div>
-        <p className="font-semibold">Leslie</p>
-        <p className="font-semibold">Alexander</p>
+        <div className="sliderGrp flex flex-col max-w-[400px] w-full ">
+          <div className="mainTxt hoverly bg-[#041723] p-[20px] ">
+            <img src={colon} className=" w-[50px]  " loading="lazy" alt="semicolon image" />
+            <TextTranslater txt="testimonal-txt" />
+          </div>
+          <div className="bottomGrp">
+            <div className="author">
+              <img src={userImg} loading="lazy" alt="customer image" />
+              <TextTranslater txt="testimonal-title" />
+            </div>
+            <div className=" hoverly  "></div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
 
-  {/* <!-- Card without hover effect (default) --> */}
-  <div className="bg-[#0a1c2f] text-white p-6 rounded-3xl w-[300px]">
-    <div className="text-5xl text-cyan-400">❝</div>
-    <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-      We develop websites with the high quality, from corporate websites to web applications.
-      We develop websites with the high quality, from corporate websites to web applications.
-      We develop websites with the high quality, from corporate websites to web applications.
-    </p>
-
-    {/* <!-- Author --> */}
-    <div className="flex items-center gap-4 mt-6">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-12 h-12 rounded-full"/>
-      <div>
-        <p className="font-semibold">Leslie</p>
-        <p className="font-semibold">Alexander</p>
-      </div>
     </div>
-  </div>
-</div>
-    </div>
-  )
+  );
 }
