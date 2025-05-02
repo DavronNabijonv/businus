@@ -26,8 +26,16 @@
 }
 
 /* swiper */
-.thought-swiper {
+.thought-swiper{
     height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thought-swiper .swiper-wrapper {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 
 .thought-swiper .swiper-button-prev,
@@ -43,10 +51,10 @@
     margin-top: 200px;
 }
 .thought-swiper .swiper-button-prev{
-    margin-left: 600px;
+    margin-left: 42%;
 }
 .thought-swiper .swiper-button-next{
-    margin-right: 600px;
+    margin-right: 42%;
 }
 
 
@@ -58,4 +66,14 @@
 .thought-swiper .swiper-button-prev::after,
 .thought-swiper .swiper-button-next::after{
     font-size: 25px;
+}
+
+@media(max-width:780px){
+    .thought-swiper .swiper-button-prev{
+        margin-left: 30%;
+    }
+    .thought-swiper .swiper-button-next{
+        margin-right: 30%;
+    }
+    
 }

@@ -64,10 +64,10 @@ export default function Main_slider() {
     <div className="main_slider ">
       <div className="container">
         <div className="main_slider_title w-full flex items-center justify-between my-[50px] ">
-          <div className=" flex gap-[80px] items-center ">
+          <div className=" flex sm:flex-row flex-col lg:gap-[80px] gap-[20px] sm:items-center ">
             <TextTranslater
               txt="client-thoughts"
-              txt_styles=" text-white text-[45px] font-[600] "
+              txt_styles=" text-white md:text-[45px] text-[30px] font-[600] "
             />
             <TextTranslater
               txt="testimonal"
@@ -77,7 +77,7 @@ export default function Main_slider() {
 
           <img
             src={colon}
-            className=" w-[150px] "
+            className="sm:flex hidden lg:w-[150px] w-[100px] "
             loading="lazy"
             alt="testimonal image"
           />
@@ -91,7 +91,7 @@ export default function Main_slider() {
           }}
           navigation
           spaceBetween={10}
-          slidesPerView={inWidth < 500 ? 1 : inWidth < 800 ? 2 : 3}
+          slidesPerView={inWidth < 725 ? 1 : inWidth < 1080 ? 2 : 3}
           centeredSlides={false}
           loop={true}
           className=" thought-swiper w-full"
@@ -100,7 +100,7 @@ export default function Main_slider() {
             <SwiperSlide>
               <div
                 key={item.id}
-                className="sliderGrp flex flex-col max-w-[400px] w-full "
+                className="sliderGrp flex flex-col max-w-[400px] w-full mx-auto "
               >
                 <div className="mainTxt  bg-[#041723] p-[50px] ">
                   <img
