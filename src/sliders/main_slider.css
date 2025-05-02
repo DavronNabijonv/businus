@@ -24,3 +24,38 @@
     box-shadow:10px 10px 2px #4cced0;
 
 }
+
+/* swiper */
+.thought-swiper {
+    height: 600px;
+}
+
+.thought-swiper .swiper-button-prev,
+.thought-swiper .swiper-button-next{
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    background-color: #041723;
+    margin-top: 200px;
+}
+.thought-swiper .swiper-button-prev{
+    margin-left: 600px;
+}
+.thought-swiper .swiper-button-next{
+    margin-right: 600px;
+}
+
+
+
+.thought-swiper .swiper-button-prev:hover,
+.thought-swiper .swiper-button-next:hover{
+    background-color: #4cced0;
+}
+.thought-swiper .swiper-button-prev::after,
+.thought-swiper .swiper-button-next::after{
+    font-size: 25px;
+}
