@@ -32,11 +32,6 @@
     align-items: center;
     justify-content: center;
 }
-.thought-swiper .swiper-wrapper {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-}
 
 .thought-swiper .swiper-button-prev,
 .thought-swiper .swiper-button-next{
