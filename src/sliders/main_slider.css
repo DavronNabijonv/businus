@@ -1,3 +1,26 @@
 .mainTxt{
     border-radius: 25px 25px 0 25px;
 }
+.cardBorderCircle{
+    border-radius: 0 0 25px 25px;
+    position: relative;
+}
+.cardBorderCircle::before{
+    content: '';
+    position: absolute;
+    padding: 20px;
+    border-radius: 100%;
+    background-color: rgba(240, 248, 255, 0);
+    box-shadow: '';
+    top: 0px;
+    left: -38px;
+    box-shadow: 10px -10px 2px #041723;
+}
+.cardBorderCircle{
+    margin-top: -2px;
+}
+.sliderGrp:hover .mainTxt,
+.sliderGrp:hover .bottomGrp .cardBorderCircle{
+    box-shadow:10px 10px 2px #4cced0;
+
+}
