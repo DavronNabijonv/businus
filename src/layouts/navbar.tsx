@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useContext, useEffect, useState } from "react";
 import "../App.css";
 import TextTranslater from "../components/textTranslater";
 import { NavLink } from "react-router-dom";
@@ -7,14 +7,18 @@ import { useTranslation } from "react-i18next";
 // logo image
 import logo from "../assets/logo.png";
 import { BsGlobe2 } from "react-icons/bs";
+import { ChangeLanguageValue } from "../App";
 
 export default function Navbar() {
   const [scrollY_Screen, setScrollY_Screen] = useState(false);
+
+  const {setLang} = useContext(ChangeLanguageValue);
 
   // change language
   const { i18n } = useTranslation();
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value);
+    setLang(e.target.value);
   };
 
   // hide and show of togle button
