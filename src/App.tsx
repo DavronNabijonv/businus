@@ -4,10 +4,24 @@ import AOS from "aos";
 import Footer from './layouts/footer'
 import Navbar from './layouts/navbar'
 import Section1 from './layouts/section1'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 
+// determine context type
+type LangContextType = {
+  lang:string,
+  setLang:React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const ChangeLanguageValue = React.createContext<LangContextType>({
+  lang:'uz',
+  setLang:()=>{}
+});
+
+
 function App() {
+
+  const [lang,setLang] = useState('uz');
 
    // aos animation 
    useEffect(() => {
@@ -27,6 +41,7 @@ function App() {
 
   return (
     <>
+    <ChangeLanguageValue.Provider value={{lang ,setLang}} >
       <Navbar/>
       <Routes>
         {routes.map(({ id, ...rest }) => (
@@ -35,6 +50,7 @@ function App() {
       </Routes>
       <Footer/>
       <ToastContainer />
+    </ChangeLanguageValue.Provider>
     </>
   )
 }
