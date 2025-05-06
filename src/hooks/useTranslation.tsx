@@ -4,10 +4,10 @@ import pb from '../api/pocketBase';
 
 export const useTranslations = () => {
   return useQuery({
-    queryKey: ['translations'],
+    queryKey: ['translations','hero'],
     queryFn: async () => {
       const result = await pb.collection('translations').getList(1, 30, {
-        sort: '-created',
+        filter: `key~'hero'`,
       });
       return result.items;
     },
