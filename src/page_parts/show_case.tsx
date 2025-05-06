@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "../App.css";
 import AOS from "aos";
 import TextTranslater from "../components/textTranslater";
@@ -8,8 +8,17 @@ import Btn from "../components/btn";
 import circle from "../assets/Frame 36.png";
 import ShowCase_swiper from "../sliders/showCase_swiper";
 import showCase from '../assets/showcase.jpg';
+import { useTranslations } from "../hooks/useTranslation";
+import { ChangeLanguageValue } from "../App";
 
 export default function Show_case() {
+
+  const { data: translations, isLoading } = useTranslations();
+  const { lang } = useContext(ChangeLanguageValue);
+
+  console.log(translations);
+
+
   // aos animation
   useEffect(() => {
     AOS.init({
@@ -17,6 +26,7 @@ export default function Show_case() {
       once: true, // har doim emas, faqat birinchi ko‘rinishda
     });
   }, []);
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <>
