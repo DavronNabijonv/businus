@@ -3,56 +3,49 @@ import "../App.css";
 import AOS from "aos";
 import TextTranslater from "../components/textTranslater";
 import Btn from "../components/btn";
+import parse from "html-react-parser";
 
 // images
 import circle from "../assets/Frame 36.png";
 import ShowCase_swiper from "../sliders/showCase_swiper";
-import showCase from '../assets/showcase.jpg';
+import showCase from "../assets/showcase.jpg";
 import { useTranslations } from "../hooks/useTranslation";
 import { ChangeLanguageValue } from "../App";
 
 export default function Show_case() {
-
   const { data: translations, isLoading } = useTranslations();
   const { lang } = useContext(ChangeLanguageValue);
 
-  console.log(translations);
-
-
-  // aos animation
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // animatsiya davomiyligi (ms)
-      once: true, // har doim emas, faqat birinchi ko‘rinishda
-    });
+    AOS.init({ duration: 1000, once: true });
   }, []);
+
   if (isLoading) return <p>Loading...</p>;
+
+  const pTeg = translations?.[1]?.[lang] || "";
 
   return (
     <>
       <div data-aos="fade-up-right">
         <div className="show_case my-[120px]">
           <div className="container relative max-lg:flex max-lg:items-center max-lg:flex-col max-lg:justify-center max-lg:gap-[100px] ">
-            
             <div className="grp_absolute lg:inline hidden w-auto ">
               <img
                 src={showCase}
-                style={{boxShadow:'15px 15px 4px #4cced0'}}
+                style={{ boxShadow: "15px 15px 4px #4cced0" }}
                 className=" showCase-mainImage "
                 loading="lazy"
                 alt="show_case main image"
               />
-              <div className="circleEffect" ></div>
+              <div className="circleEffect"></div>
             </div>
 
-            <div className="grp_left flex flex-col gap-[20px]  max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
+            <div className="grp_left flex flex-col gap-[20px] max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
               <div className="showCase-ti">
-                <div className="with_span w-auto inline-block rounded-[60px] py-[5px] pr-[30px] bg-[#012235] ">
-                  <TextTranslater txt="head-your" txt_styles="inline" />
-                  <TextTranslater
-                    txt="head-growth"
-                    txt_styles="text-[#4CCED0] inline ml-[20px] "
-                  />
+                <div className="with_span w-auto inline-block rounded-[60px] py-[5px] pr-[30px] bg-[#012235]">
+                  <div className="text-white font-[600] text-[32px] lg:text-[38px] leading-[40px] lg:leading-[48px]">
+                    {parse(pTeg)}
+                  </div>
                 </div>
                 <div className="head-our">
                   <TextTranslater
