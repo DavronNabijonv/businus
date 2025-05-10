@@ -1,8 +1,9 @@
 import { useContext, useEffect } from "react";
 import "../App.css";
 import AOS from "aos";
-import TextTranslater from "../components/textTranslater";
+// import TextTranslater from "../components/textTranslater";
 import Btn from "../components/btn";
+import he from 'he';
 import parse from "html-react-parser";
 
 // images
@@ -11,10 +12,12 @@ import ShowCase_swiper from "../sliders/showCase_swiper";
 import showCase from "../assets/showcase.jpg";
 import { useTranslations } from "../hooks/useTranslation";
 import { ChangeLanguageValue } from "../App";
+// import useParseHTML from "../hooks/useParseHTML";
 
 export default function Show_case() {
   const { data: translations, isLoading } = useTranslations();
   const { lang } = useContext(ChangeLanguageValue);
+  // const {parseHTMLString} = useParseHTML();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -23,6 +26,9 @@ export default function Show_case() {
   if (isLoading) return <p>Loading...</p>;
 
   const pTeg = translations?.[1]?.[lang] || "";
+  console.log(pTeg);
+  const decodeHTML = he.decode(pTeg);
+  console.log('decode: ',decodeHTML);
 
   return (
     <>
@@ -44,21 +50,18 @@ export default function Show_case() {
               <div className="showCase-ti">
                 <div className="with_span w-auto inline-block rounded-[60px] py-[5px] pr-[30px] bg-[#012235]">
                   <div className="text-white font-[600] text-[32px] lg:text-[38px] leading-[40px] lg:leading-[48px]">
-                    {parse(pTeg)}
+                    {parse(decodeHTML)}
+                    {/* <h1 dangerouslySetInnerHTML={{__html:`${parseHTMLString(decodeHTML)}`}} /> */}
                   </div>
                 </div>
-                <div className="head-our">
-                  <TextTranslater
-                    txt="head-our"
-                    txt_styles=" text-white font-[600] rounded-[60px] py-[5px] pr-[30px] bg-[#012235] inline-block mt-[20px] "
-                  />
-                </div>
+                
               </div>
-              <div className="head-txt">
-                <TextTranslater
+              <div className="head-txt showCase-txt text-white max-w-[500px] w-full mt-[30px] lg:text-left text-center ">
+                {/* <TextTranslater
                   txt="head-txt"
                   txt_styles="showCase-txt text-white max-w-[500px] w-full mt-[30px] lg:text-left text-center "
-                />
+                /> */}
+                {parse(translations?.[0]?.[lang])}
               </div>
               <div className="btn_grp flex gap-[15px] mt-[30px] text-white  ">
                 <Btn
@@ -82,7 +85,7 @@ export default function Show_case() {
         </div>
       </div>
 
-      <div className="showCase_slider">
+      <div className="showCase_slider pt-[5px] ">
         <ShowCase_swiper />
       </div>
     </>
