@@ -48,7 +48,7 @@ export default function Show_case() {
 
             <div className="grp_left flex flex-col gap-[20px] max-lg:w-full max-lg:justify-center max-lg:items-center max-lg:gap-[30px] ">
               <div className="showCase-ti">
-                <div className="with_span w-auto inline-block rounded-[60px] py-[0px] pr-[30px] bg-[#012235]">
+                <div className="with_span w-auto inline-block rounded-[60px] ">
                   <div className="text-white font-[600] text-[32px] lg:text-[55px] max-w-[650px] leading-[40px] lg:leading-[78px] ">
                     {parse(decodeHTML)}
                     {/* <h1 dangerouslySetInnerHTML={{__html:`${parseHTMLString(decodeHTML)}`}} /> */}
