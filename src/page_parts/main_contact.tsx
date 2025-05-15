@@ -15,11 +15,11 @@ export default function Main_contact() {
   const isValidName = (name: string) => /^[A-Za-z\s]{4,}$/.test(name.trim());
   const isValidPhone = (phone: string) => phone.replace(/\D/g, "").length >= 9;
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const input = e.target.value;
-    const filtered = input.replace(/[^\d+()-\s]/g, ""); // faqat raqam va telefon belgilariga ruxsat
-    setPnumber(filtered);
-  };
+  // const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const input = e.target.value;
+  //   const filtered = input.replace(/[^\d+()-\s]/g, ""); // faqat raqam va telefon belgilariga ruxsat
+  //   setPnumber(filtered);
+  // };
 
   const sendMessage = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
