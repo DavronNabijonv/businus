@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className=" flex gap-[5px] items-center rounded-[25px] backdrop-blur-sm bg-[#1B4055] hover:bg-gray-700 pl-[10px] ">
           <BsGlobe2 />
           <select
-            className="appearance-none hover:bg-gray-700 shadow-white rounded-[25px] p-[8px] rounded-[10px] flex flex-col justify-center items-center "
+            className="appearance-none hover:bg-gray-700 shadow-white rounded-[25px] p-[8px] flex flex-col justify-center items-center "
             onChange={handleChange}
           >
             <option value={"uz"}>Уз</option>
